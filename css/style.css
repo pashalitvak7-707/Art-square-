@@ -3,7 +3,36 @@
    Design system
    =========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Comfortaa:wght@400;500;700&display=swap');
+/* Logo face only — Bellet & PF DIN are licensed and loaded locally below */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap');
+
+/* ---- Display face: BelletRegular ---- */
+@font-face{
+  font-family:'Bellet';
+  src:url('../assets/fonts/Bellet-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Bellet-Regular.woff')  format('woff'),
+      url('../assets/fonts/Bellet-Regular.otf')   format('opentype'),
+      url('../assets/fonts/Bellet-Regular.ttf')   format('truetype');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+
+/* ---- Text face: PF DIN ---- */
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDinText-Regular.woff2') format('woff2'),
+      url('../assets/fonts/PFDinText-Regular.woff')  format('woff'),
+      url('../assets/fonts/PFDinText-Regular.otf')   format('opentype'),
+      url('../assets/fonts/PFDinText-Regular.ttf')   format('truetype');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDinText-Medium.woff2') format('woff2'),
+      url('../assets/fonts/PFDinText-Medium.woff')  format('woff'),
+      url('../assets/fonts/PFDinText-Medium.otf')   format('opentype'),
+      url('../assets/fonts/PFDinText-Medium.ttf')   format('truetype');
+  font-weight:500 600;font-style:normal;font-display:swap;
+}
 
 :root{
   --red:        #9d2d22;
@@ -18,8 +47,8 @@
   --muted:      #6b6560;
   --line:       rgba(255,255,255,.35);
 
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans:  'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Bellet', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'PF DIN', 'PFDinTextPro', 'Jost', 'Helvetica Neue', Arial, sans-serif;
   --logo:  'Comfortaa', var(--sans);
 
   --wrap: 1240px;
@@ -152,13 +181,6 @@ a{color:inherit;text-decoration:none}
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 100%);
 }
-.hero__play{
-  position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);
-  width:96px;height:64px;border:2px solid rgba(255,255,255,.85);
-  display:grid;place-items:center;cursor:pointer;transition:.3s;
-}
-.hero__play:hover{background:rgba(255,255,255,.12)}
-.hero__play svg{width:22px;height:22px;fill:#fff;margin-left:4px}
 .hero__title{
   position:relative;z-index:2;
   padding:0 var(--pad) clamp(48px,8vh,110px);
