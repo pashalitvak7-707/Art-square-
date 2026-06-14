@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Film | ArtSqr</title>
+<meta name="description" content="The ArtSqr film — a slow ascent over the building, the courtyard and the mural.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="film">
+<div data-include="header"></div>
+
+<section class="pad bg-charcoal" style="padding-top:clamp(120px,16vh,180px)">
+  <div class="container">
+    <div class="center" style="margin-bottom:36px">
+      <span class="eyebrow" style="color:#e9c7b9" data-reveal>The film</span>
+      <h1 class="display" style="margin-top:16px;color:#fff" data-reveal data-reveal-d="1">A slow ascent over ArtSqr</h1>
+    </div>
+    <div style="position:relative;aspect-ratio:16/9;background:#000;overflow:hidden" data-reveal>
+      <!-- Replace assets/film.mp4 with the final building fly-through. -->
+      <video controls playsinline poster="assets/rooftop-pool-hero.jpg" style="width:100%;height:100%;object-fit:cover">
+        <source src="assets/film.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="lede center" style="margin:28px auto 0;color:#cfc8c0" data-reveal data-reveal-d="1">
+      A single camera move rises from the courtyard to the roof garden — the same ascent that
+      opens the home page.
+    </p>
+    <div class="center" style="margin-top:30px" data-reveal>
+      <button class="btn btn--light" data-modal="viewing">Book a viewing</button>
+    </div>
+  </div>
+</section>
+
+<div data-include="footer"></div>
+<div data-include="modals"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

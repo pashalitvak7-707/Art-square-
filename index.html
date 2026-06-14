@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ArtSqr — A Private, Aegean-Inspired Residence in the Heart of Limassol</title>
+<meta name="description" content="ArtSqr — private signature residences in central Limassol. A courtyard as an extension of home, a mural by Millo, and just 24 residents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+<div data-include="header"></div>
+
+<!-- ============ HERO (background slow camera pan up + film button + headline) ============ -->
+<section class="hero">
+  <div class="hero__media" id="heroMedia" data-video="assets/hero.mp4">
+    <!-- Slow "camera fly-up" over the building (parallax-style ascent). -->
+    <!-- Drop assets/hero.mp4 in place and it is used automatically; otherwise the image pans up. -->
+    <img class="kenburns" src="assets/building-dusk.jpg" alt="ArtSqr building, central Limassol">
+  </div>
+  <div class="hero__inner">
+    <p class="eyebrow" data-reveal>ArtSqr · Central Limassol</p>
+    <h1 class="display" data-reveal data-reveal-d="1">A private, Aegean-inspired residence in the heart of Limassol</h1>
+    <div class="hero__badge" data-reveal data-reveal-d="2">
+      <span class="num">250&nbsp;m²</span>
+      <span class="cap">Maximum living area</span>
+    </div>
+  </div>
+  <!-- button → film that loads on its own page/player -->
+  <button class="btn btn--light hero__film" data-modal="film">▷&nbsp; Watch the film</button>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- ============ PARALLAX STATEMENT — texts appear with parallax ============ -->
+<section class="pad bg-cream">
+  <div class="container statement">
+    <span class="eyebrow" data-reveal>Life in a privileged cluster</span>
+    <h2 class="display" data-parallax="0.12" data-reveal>Central Limassol</h2>
+    <p class="lede center" style="margin:26px auto 0" data-reveal data-reveal-d="1">
+      Close to the city centre and the seafront — an address where art, architecture
+      and everyday comfort share the same postcode.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ART AS PART OF THE ADDRESS — images appear with parallax ============ -->
+<section class="pad bg-brick on-brick">
+  <div class="container art-feature">
+    <div class="art-stack parallax" data-reveal>
+      <img class="tall" src="assets/building-mural.jpg" alt="Signature mural on the residence façade" data-parallax="0.1">
+      <img src="assets/millo-artist.jpg" alt="Mural by Millo" data-parallax="0.16">
+      <img src="assets/building-mural-2.jpg" alt="Residential mural detail" data-parallax="0.2">
+    </div>
+    <div class="art-text">
+      <span class="eyebrow" style="color:#f3cdbd">The art as part of the address</span>
+      <h2 class="display" style="margin-top:18px" data-reveal>Art by Millo</h2>
+      <p class="lede" data-reveal data-reveal-d="1">
+        Commissioned from the Italian muralist Millo, a single monumental line-drawing
+        folds the inner courtyard into a private gallery. Residents do not visit the work —
+        they live beside it.
+      </p>
+      <a class="link-arrow" href="art.html" data-reveal data-reveal-d="2">Discover the art story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHOOSE YOUR RHYTHM — accordion + replaceable image carousel ============ -->
+<section class="pad bg-cream">
+  <div class="container">
+    <div class="center" style="margin-bottom:clamp(40px,6vw,80px)">
+      <h2 class="display" data-reveal>Choose your rhythm</h2>
+      <p class="lede center" style="margin:20px auto 0" data-reveal data-reveal-d="1">
+        Living formats for different ways of life — with the same level of
+        architectural identity and everyday comfort.
+      </p>
+    </div>
+    <div class="rhythm">
+      <div data-accordion>
+        <div class="acc-item" data-slide="0">
+          <button class="acc-head">1-Bedroom Residence <span class="chev">⌄</span></button>
+          <div class="acc-body"><div class="acc-body__in">
+            <div class="big">78 m²</div>
+            <p>A composed city home with floor-to-ceiling light and a generous terrace.</p>
+            <a class="link-arrow" href="residences.html">View residence →</a>
+          </div></div>
+        </div>
+        <div class="acc-item" data-slide="1">
+          <button class="acc-head">2-Bedroom Residence <span class="chev">⌄</span></button>
+          <div class="acc-body"><div class="acc-body__in">
+            <div class="big">112 m²</div>
+            <p>Room for family and guests, framed around an open kitchen and lounge.</p>
+            <a class="link-arrow" href="residences.html">View residence →</a>
+          </div></div>
+        </div>
+        <div class="acc-item" data-slide="2" data-default>
+          <button class="acc-head">3-Bedroom Residence <span class="chev">⌄</span></button>
+          <div class="acc-body"><div class="acc-body__in">
+            <div class="big">165 m²</div>
+            <p>A rare full-scale home for family and work — a fuller way of living.</p>
+            <a class="link-arrow" href="three-bedroom.html">View residence →</a>
+          </div></div>
+        </div>
+        <div class="acc-item" data-slide="3">
+          <button class="acc-head">The Penthouse Residence <span class="chev">⌄</span></button>
+          <div class="acc-body"><div class="acc-body__in">
+            <div class="big">250+ m²</div>
+            <p>The crown of ArtSqr — indoor area, veranda and a private roof garden above Limassol.</p>
+            <a class="link-arrow" href="penthouse.html">View residence →</a>
+          </div></div>
+        </div>
+      </div>
+      <!-- Carousel — swap/extend by editing the slides below (data-driven, easy to replace) -->
+      <div class="carousel" data-reveal>
+        <div class="carousel__track">
+          <div class="carousel__slide"><img src="assets/interior-kitchen.jpg" alt="1-bedroom interior"></div>
+          <div class="carousel__slide"><img src="assets/interior-living-a.jpg" alt="2-bedroom interior"></div>
+          <div class="carousel__slide"><img src="assets/interior-dining.jpg" alt="3-bedroom interior"></div>
+          <div class="carousel__slide"><img src="assets/penthouse-pool.jpg" alt="Penthouse interior"></div>
+        </div>
+        <button class="carousel__nav prev" aria-label="Previous">‹</button>
+        <button class="carousel__nav next" aria-label="Next">›</button>
+        <div class="carousel__dots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PENTHOUSE FEATURE — parallax part of home page ============ -->
+<section class="pad bg-paper">
+  <div class="container feature">
+    <div class="feature__media parallax" data-reveal>
+      <img src="assets/penthouse-pool.jpg" alt="The Penthouse Residence" data-parallax="0.1">
+    </div>
+    <div>
+      <span class="eyebrow" style="color:var(--brick)">The Penthouse Residence</span>
+      <h2 class="display" style="margin-top:16px" data-reveal>250 m² above Limassol</h2>
+      <div class="stat-grid" data-reveal data-reveal-d="1">
+        <div class="stat"><div class="n">250+ m²</div><div class="l">Total area</div></div>
+        <div class="stat"><div class="n">200 m²</div><div class="l">Indoor area</div></div>
+        <div class="stat"><div class="n">50 m²</div><div class="l">Veranda</div></div>
+        <div class="stat"><div class="n">127 m²</div><div class="l">Roof garden</div></div>
+      </div>
+      <a class="btn btn--solid" href="penthouse.html" data-reveal data-reveal-d="2">Explore residence →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3-BEDROOM FEATURE ============ -->
+<section class="pad bg-cream">
+  <div class="container feature flip">
+    <div class="feature__media parallax" data-reveal>
+      <img src="assets/interior-dining.jpg" alt="3-Bedroom Family Residence" data-parallax="0.1">
+    </div>
+    <div>
+      <span class="eyebrow" style="color:var(--brick)">3-Bedroom Family Residence</span>
+      <h2 class="display" style="margin-top:16px" data-reveal>165 m² for a fuller way of living</h2>
+      <div class="stat-grid" data-reveal data-reveal-d="1">
+        <div class="stat"><div class="n">165 m²</div><div class="l">Total area</div></div>
+        <div class="stat"><div class="n">137 m²</div><div class="l">Indoor area</div></div>
+        <div class="stat"><div class="n">28 m²</div><div class="l">Veranda</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">Private parking</div></div>
+        <div class="stat"><div class="n">1 + 2</div><div class="l">En-suite bathrooms</div></div>
+      </div>
+      <a class="btn btn--solid" href="three-bedroom.html" data-reveal data-reveal-d="2">Explore residence →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COURTYARD ============ -->
+<section class="pad bg-charcoal">
+  <div class="container">
+    <div class="center" style="margin-bottom:48px">
+      <span class="eyebrow" style="color:#e9c7b9" data-reveal>Courtyard</span>
+      <h2 class="display" style="margin-top:18px;color:#fff" data-reveal data-reveal-d="1">
+        A private courtyard designed<br>as an extension of home
+      </h2>
+    </div>
+    <div class="feature__media parallax" style="aspect-ratio:21/9" data-reveal>
+      <img src="assets/courtyard-aerial.jpg" alt="Private courtyard and lap pool" data-parallax="0.08">
+    </div>
+    <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-top:46px;color:#fff" data-reveal data-reveal-d="1">
+      <div class="stat"><div class="n">1,700 m²</div><div class="l" style="color:#b9b1a8">Courtyard garden</div></div>
+      <div class="stat"><div class="n">22 m</div><div class="l" style="color:#b9b1a8">Lap pool</div></div>
+      <div class="stat"><div class="n">Only 24</div><div class="l" style="color:#b9b1a8">Residents</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l" style="color:#b9b1a8">Private to residents</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AMENITIES — hover-expand cards ============ -->
+<section class="pad bg-paper">
+  <div class="container">
+    <div class="center" style="margin-bottom:48px">
+      <span class="eyebrow" style="color:var(--brick)" data-reveal>Comfort</span>
+      <h2 class="display" style="margin-top:16px" data-reveal data-reveal-d="1">Comfort you don't need to think about</h2>
+      <p class="lede center" style="margin:20px auto 0" data-reveal data-reveal-d="2">
+        The systems behind the walls are considered so the surfaces in front of them
+        can be quiet. Specified once, forgotten forever. <em>Hover a system to read more.</em>
+      </p>
+    </div>
+  </div>
+  <div class="am-row" data-reveal>
+    <div class="am-card">
+      <div class="ic">❉</div><span class="tag">01</span>
+      <h4>Underfloor heating</h4>
+      <div class="more">Whole-floor radiant warmth across every residence — even, silent and invisible, with no radiators to design around.</div>
+    </div>
+    <div class="am-card">
+      <div class="ic">❋</div><span class="tag">02</span>
+      <h4>VRF air conditioning</h4>
+      <div class="more">Zone-by-zone climate control that adapts room by room, recovering energy between spaces as conditions change.</div>
+    </div>
+    <div class="am-card">
+      <div class="ic">☀</div><span class="tag">03</span>
+      <h4>Solar &amp; PV panels</h4>
+      <div class="more">On-site renewable energy feeding the common areas and reducing the running cost of the whole building.</div>
+    </div>
+    <div class="am-card">
+      <div class="ic">▲</div><span class="tag">04</span>
+      <h4>Energy class A</h4>
+      <div class="more">The highest efficiency rating — better comfort, lower bills and a smaller footprint for every residence.</div>
+    </div>
+    <div class="am-card">
+      <div class="ic">▢</div><span class="tag">05</span>
+      <h4>Floor-to-ceiling windows</h4>
+      <div class="more">Triple-glazed, thermally broken glazing that fills each home with Mediterranean light while keeping it serene.</div>
+    </div>
+  </div>
+  <div class="container center" style="margin-top:48px" data-reveal>
+    <a class="btn btn--brick" href="amenities.html">Explore amenities →</a>
+  </div>
+</section>
+
+<!-- ============ LOCATION + MAP placeholder ============ -->
+<section class="pad bg-cream">
+  <div class="container location">
+    <div>
+      <span class="eyebrow" style="color:var(--brick)" data-reveal>Quietly connected</span>
+      <h2 class="display" style="margin-top:16px" data-reveal data-reveal-d="1">Central Limassol,<br>quietly connected</h2>
+      <p class="lede" style="margin-top:20px" data-reveal data-reveal-d="2">
+        A residential pocket within walking distance of the Old Town, the marina and the
+        seafront promenade — and a short drive from international schools, the airport
+        and the wine country.
+      </p>
+      <ol class="loc-list" data-reveal data-reveal-d="2">
+        <li><span class="idx">1.</span><span class="nm">Seafront promenade</span><span class="dt">4 min walk</span></li>
+        <li><span class="idx">2.</span><span class="nm">Limassol Marina</span><span class="dt">9 min walk</span></li>
+        <li><span class="idx">3.</span><span class="nm">Old Town &amp; Church mile</span><span class="dt">7 min walk</span></li>
+        <li><span class="idx">4.</span><span class="nm">The English School</span><span class="dt">6 min drive</span></li>
+        <li><span class="idx">5.</span><span class="nm">Paphos Airport</span><span class="dt">35 min drive</span></li>
+      </ol>
+    </div>
+    <!-- Map placeholder — to be redrawn later -->
+    <div class="map-wrap" data-reveal>
+      <img src="assets/district-map.jpg" alt="District map of central Limassol">
+      <span class="map-pin"></span>
+      <span class="map-note">Indicative map · to be redrawn</span>
+    </div>
+  </div>
+</section>
+
+<div data-include="footer"></div>
+<div data-include="modals"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
