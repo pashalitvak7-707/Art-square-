@@ -1,34 +1,27 @@
 # Fonts
 
-The site is wired to use two **licensed** typefaces. They are not included in
-this repo (they can't be redistributed). Drop the font files here and they load
-automatically — until then the site falls back to close web-safe substitutes
-(Cormorant Garamond for display, Jost for text).
+The two project typefaces are installed here as `.woff2` (web) + `.ttf`
+(source) and wired up via `@font-face` at the top of `css/style.css`.
 
-## 1. Display / headings — **BelletRegular**
+## Display / headings — **Bellet** (BelletRegular)
 Used for every capitalized heading (hero, section titles, stat figures).
-Add any of these (woff2 preferred):
+`Bellet-Regular.{woff2,ttf}`
 
-```
-Bellet-Regular.woff2
-Bellet-Regular.woff
-Bellet-Regular.otf   (or .ttf)
-```
+> Note: the supplied Bellet is licensed **free for personal use only**.
+> For commercial/production use, obtain the appropriate licence.
 
-## 2. Body / lowercase — **PF DIN**
-Used for nav, labels, buttons and all paragraph text.
+## Body / lowercase — **PF DIN** (PF Din Display Pro)
+Used for nav, labels, buttons and all paragraph text. CSS family name: `PF DIN`.
 
-```
-PFDinText-Regular.woff2   (or .woff / .otf / .ttf)
-PFDinText-Medium.woff2    (or .woff / .otf / .ttf)   — for 500/600 weights
-```
+| Weight | File |
+|--------|------|
+| 300 Light   | `PFDin-Light.{woff2,ttf}`   |
+| 400 Regular | `PFDin-Regular.{woff2,ttf}` |
+| 500/600 Medium | `PFDin-Medium.{woff2,ttf}` |
+| 700 Bold    | `PFDin-Bold.{woff2,ttf}`    |
 
-File names must match exactly (see `@font-face` blocks at the top of
-`css/style.css`). If your files are named differently, either rename them or
-update the `src:` URLs in the CSS.
-
-### Converting OTF/TTF → WOFF2 (optional, smaller/faster)
+## Regenerating woff2 from ttf
 ```bash
 pip install fonttools brotli
-fonttools ttLib.woff2 compress Bellet-Regular.ttf
+python3 -c "from fontTools.ttLib import TTFont; f=TTFont('PFDin-Regular.ttf'); f.flavor='woff2'; f.save('PFDin-Regular.woff2')"
 ```

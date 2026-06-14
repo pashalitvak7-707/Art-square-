@@ -10,28 +10,34 @@
 @font-face{
   font-family:'Bellet';
   src:url('../assets/fonts/Bellet-Regular.woff2') format('woff2'),
-      url('../assets/fonts/Bellet-Regular.woff')  format('woff'),
-      url('../assets/fonts/Bellet-Regular.otf')   format('opentype'),
       url('../assets/fonts/Bellet-Regular.ttf')   format('truetype');
   font-weight:400;font-style:normal;font-display:swap;
 }
 
-/* ---- Text face: PF DIN ---- */
+/* ---- Text face: PF DIN (PF Din Display Pro) ---- */
 @font-face{
   font-family:'PF DIN';
-  src:url('../assets/fonts/PFDinText-Regular.woff2') format('woff2'),
-      url('../assets/fonts/PFDinText-Regular.woff')  format('woff'),
-      url('../assets/fonts/PFDinText-Regular.otf')   format('opentype'),
-      url('../assets/fonts/PFDinText-Regular.ttf')   format('truetype');
+  src:url('../assets/fonts/PFDin-Light.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Light.ttf')   format('truetype');
+  font-weight:300;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDin-Regular.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Regular.ttf')   format('truetype');
   font-weight:400;font-style:normal;font-display:swap;
 }
 @font-face{
   font-family:'PF DIN';
-  src:url('../assets/fonts/PFDinText-Medium.woff2') format('woff2'),
-      url('../assets/fonts/PFDinText-Medium.woff')  format('woff'),
-      url('../assets/fonts/PFDinText-Medium.otf')   format('opentype'),
-      url('../assets/fonts/PFDinText-Medium.ttf')   format('truetype');
+  src:url('../assets/fonts/PFDin-Medium.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Medium.ttf')   format('truetype');
   font-weight:500 600;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDin-Bold.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Bold.ttf')   format('truetype');
+  font-weight:700;font-style:normal;font-display:swap;
 }
 
 :root{
