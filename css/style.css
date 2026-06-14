@@ -422,6 +422,28 @@ a{color:inherit;text-decoration:none}
 .res-card.tall{grid-row:span 2}
 .res-card.wide{grid-column:span 1}
 
+/* ---- Auto-rotating slider with square indicators ---- */
+.res-slider .slides{position:absolute;inset:0}
+.res-slider .slide{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s ease, transform .6s ease;
+}
+.res-slider .slide.is-active{opacity:1}
+.res-slider:hover .slide.is-active{transform:scale(1.05)}
+.res-slider .dots{
+  position:absolute;left:24px;bottom:18px;z-index:3;
+  display:flex;gap:8px;
+}
+.res-slider .dot{
+  width:11px;height:11px;padding:0;border:1px solid rgba(255,255,255,.85);
+  background:transparent;cursor:pointer;border-radius:0;          /* squares */
+  transition:background .3s ease, transform .3s ease;
+}
+.res-slider .dot:hover{background:rgba(255,255,255,.5)}
+.res-slider .dot.is-active{background:#fff}
+/* lift the title so it doesn't collide with the dots */
+.res-slider .name{bottom:42px}
+
 /* ===========================================================
    RESPONSIVE
    =========================================================== */

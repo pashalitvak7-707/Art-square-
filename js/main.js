@@ -89,4 +89,34 @@
     if (enabled) measure();
     requestAnimationFrame(frame);
   }
+
+  /* -------------------------------------------------------
+     Residence sliders — auto-rotate with square indicators
+     that also change the image when clicked.
+  ------------------------------------------------------- */
+  [].slice.call(document.querySelectorAll('.res-slider')).forEach(function (slider) {
+    var slides = slider.querySelectorAll('.slide');
+    var dots = slider.querySelectorAll('.dot');
+    if (slides.length < 2) return;
+    var idx = 0;
+    var interval = parseInt(slider.getAttribute('data-interval'), 10) || 4500;
+    var timer = null;
+
+    function go(n) {
+      slides[idx].classList.remove('is-active');
+      if (dots[idx]) dots[idx].classList.remove('is-active');
+      idx = (n + slides.length) % slides.length;
+      slides[idx].classList.add('is-active');
+      if (dots[idx]) dots[idx].classList.add('is-active');
+    }
+    function start() { stop(); timer = setInterval(function () { go(idx + 1); }, interval); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    [].slice.call(dots).forEach(function (d, i) {
+      d.addEventListener('click', function () { go(i); start(); });
+    });
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    start();
+  });
 })();
