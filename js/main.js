@@ -49,8 +49,9 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var nodes = [].slice.call(document.querySelectorAll('.parallax'));
   if (!reduceMotion && nodes.length) {
-    var CLAMP = 90;        // max px of drift in either direction
-    var EASE = 0.075;      // lower = more lag / floatier
+    var BASE = 680;        // overall drift amount (px) at full traversal
+    var CLAMP = 170;       // max upward drift in px
+    var EASE = 0.07;       // lower = more lag / floatier
     var enabled = window.innerWidth > 760;
 
     var items = nodes.map(function (el) {
@@ -58,13 +59,15 @@
     });
 
     function measure() {
-      var vh = window.innerHeight, vc = vh / 2;
+      var vh = window.innerHeight;
       items.forEach(function (s) {
         var r = s.el.getBoundingClientRect();
-        if (r.bottom < -300 || r.top > vh + 300) return; // skip far off-screen
-        var fromCenter = (r.top + r.height / 2) - vc;     // +below / -above centre
-        var t = -fromCenter * s.speed;                    // float up while rising
-        s.target = t > CLAMP ? CLAMP : (t < -CLAMP ? -CLAMP : t);
+        if (r.bottom < -400 || r.top > vh + 400) return;  // skip far off-screen
+        // progress 0 (entering from bottom) -> 1 (leaving past top)
+        var p = (vh - r.top) / (vh + r.height);
+        if (p < 0) p = 0; else if (p > 1) p = 1;
+        var t = -p * s.speed * BASE;                      // ALWAYS upward (<= 0)
+        s.target = t < -CLAMP ? -CLAMP : t;
       });
     }
 
