@@ -42,12 +42,17 @@
 
 :root{
   --red:        #9d2d22;
+  --red-intro:  #85251b;
   --red-deep:   #85251b;
+  --burgundy:   #5a1a1a;
+  --band-grey:  #595959;
   --red-dark:   #6e1f17;
   --charcoal:   #2a2626;
   --cream:      #f2f2f2;
   --paper:      #faf8f5;
   --blue-band:  #deecf9;
+  --grey-stat:  #f2f2f2;
+  --grey-garden:#ececec;
   --peach:      #e7b78f;
   --ink:        #1d1a18;
   --muted:      #6b6560;
@@ -145,19 +150,21 @@ a{color:inherit;text-decoration:none}
 .site-header{
   position:fixed;top:0;left:0;right:0;z-index:60;
   display:flex;align-items:center;justify-content:space-between;
-  padding:18px var(--pad);
+  padding:22px var(--pad);
   color:#fff;
+  /* slightly dark panel across the top, as in the design */
+  background:linear-gradient(180deg,rgba(20,16,14,.55) 0%,rgba(20,16,14,.22) 65%,rgba(20,16,14,0) 100%);
   transition:background .4s ease, padding .4s ease, color .4s ease;
 }
 .site-header.scrolled{
   background:rgba(42,38,38,.95);
   backdrop-filter:blur(8px);
-  padding:12px var(--pad);
+  padding:14px var(--pad);
 }
-.nav-left,.nav-right{display:flex;align-items:center;gap:clamp(14px,2vw,34px)}
+.nav-left,.nav-right{display:flex;align-items:center;gap:clamp(12px,1.5vw,30px)}
 .nav-left a,.nav-right a,.nav-right .num{
-  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
-  white-space:nowrap;opacity:.92;transition:opacity .3s;
+  font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:400;
+  white-space:nowrap;opacity:.95;transition:opacity .3s;
 }
 .nav-left a:hover,.nav-right a:hover{opacity:.6}
 .nav-right .sep{opacity:.4}
@@ -222,14 +229,14 @@ a{color:inherit;text-decoration:none}
 }
 .hero__title h1{
   font-size:clamp(2.4rem,6.4vw,5.2rem);
-  font-weight:300;letter-spacing:.03em;line-height:1.02;
+  font-weight:300;letter-spacing:.06em;word-spacing:.16em;line-height:1.08;
   text-shadow:0 2px 30px rgba(0,0,0,.4);
 }
 
 /* ===========================================================
    RED INTRO BLOCK
    =========================================================== */
-.red{background:var(--red);color:#fff}
+.red{background:var(--red-intro);color:#fff}
 .intro{padding:clamp(60px,9vw,130px) 0}
 .intro-grid{
   display:grid;grid-template-columns:repeat(12,1fr);
@@ -289,12 +296,18 @@ a{color:inherit;text-decoration:none}
 /* ===========================================================
    SIGNATURE banded hero
    =========================================================== */
-.band{background:var(--charcoal);color:#fff;text-align:center;padding:14px}
-.band .label{opacity:.7}
+.band{background:var(--charcoal);color:#fff;text-align:center;padding:16px}
+.band .label{opacity:.85}
+.band--signature{background:var(--burgundy)}      /* penthouse signature — burgundy/red */
+.band--grey{background:var(--band-grey)}            /* family signature & courtyard — grey */
+.band--comfort{background:var(--red);padding:24px}  /* comfort — burgundy, larger */
+.band--quiet{background:var(--blue-band);color:var(--ink)}
+.band--quiet .label{opacity:.65}
 .feature{
   position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;
   text-align:center;color:#fff;overflow:hidden;
 }
+.feature--large{min-height:92vh}                    /* courtyard / penthouse panels — larger */
 .feature img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .feature::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.32)}
 .feature__inner{position:relative;z-index:2;padding:var(--pad);max-width:1000px}
@@ -305,6 +318,8 @@ a{color:inherit;text-decoration:none}
    STATS (light blue blocks with images)
    =========================================================== */
 .stats{background:var(--blue-band)}
+.stats--grey{background:var(--grey-stat)}      /* family — grey/white */
+.stats--garden{background:var(--grey-garden)}  /* garden — grey (3rd page) */
 .stats-lead{padding:clamp(50px,7vw,100px) 0 0}
 .stats-lead .small{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--muted)}
 .stat-cols{
@@ -315,24 +330,29 @@ a{color:inherit;text-decoration:none}
 .stat-img{overflow:hidden;margin:0}
 .stat-img img{width:100%;height:100%;object-fit:cover;display:block}
 .stats-cta{text-align:center;padding-bottom:clamp(50px,7vw,100px)}
-.stats-cta h3{font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:var(--ink);font-family:var(--serif);letter-spacing:.04em}
+.stats-cta h3{font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:400;color:var(--ink);font-family:var(--serif);letter-spacing:.05em;text-transform:uppercase}
 .stats-cta h3 em{color:var(--red);font-style:normal}
+.stats-cta--red h3{color:var(--red)}
+.stats-cta--red h3 em{color:var(--red)}
 
 /* ---------- Editorial collage (penthouse / family) ---------- */
 .collage{
   display:grid;grid-template-columns:1fr 1fr;
-  gap:clamp(24px,4vw,70px);
+  gap:clamp(16px,2vw,34px);
   align-items:start;
   padding:clamp(50px,7vw,100px) 0 clamp(30px,4vw,60px);
 }
-.col{display:flex;flex-direction:column;gap:clamp(34px,5vw,76px)}
+.col{display:flex;flex-direction:column;gap:clamp(30px,4vw,64px)}
 .cell-text{display:flex;flex-direction:column;justify-content:center}
 .cell-text.stat .stat-num{display:block}
 .lead-italic{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--muted);line-height:1.3}
-.cell-img{overflow:hidden;margin:0;will-change:transform}
+.cell-img{overflow:hidden;margin:0;will-change:transform;position:relative;box-shadow:0 24px 50px rgba(0,0,0,.10)}
 .cell-img img{width:100%;height:100%;object-fit:cover;display:block}
-.cell-img.plan{background:#fff;padding:clamp(16px,2vw,30px)}
+.cell-img.plan{background:#fff;padding:clamp(16px,2vw,30px);box-shadow:none}
 .cell-img.plan img{object-fit:contain}
+/* images extend toward the centre so adjacent images overlap slightly */
+.col--left .cell-img{width:112%;margin-right:-12%;z-index:1}
+.col--right .cell-img{width:112%;margin-left:-12%;z-index:2}
 
 /* ---------- Parallax floating images ---------- */
 .parallax{will-change:transform}
@@ -351,12 +371,19 @@ a{color:inherit;text-decoration:none}
 /* ===========================================================
    COMFORT feature row
    =========================================================== */
-.features{background:var(--cream);padding:clamp(40px,5vw,70px) 0}
-.features-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#ddd6cf}
-.features-grid > div{background:var(--cream);padding:clamp(20px,2vw,32px) 18px}
-.features-grid .ico{width:42px;height:42px;margin-bottom:18px;color:var(--charcoal)}
-.features-grid h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:.5rem}
-.features-grid p{font-size:.78rem;color:var(--muted)}
+/* burgundy panel directly under the comfort image */
+.comfort-strip{height:46px;background:var(--red)}
+.features{background:#fbfbfb;padding:clamp(40px,5vw,80px) 0}
+.features-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.6vw,24px)}
+.feat{text-align:left}
+.feat-box{
+  background:#f4f4f4;border-radius:4px;
+  aspect-ratio:1/.78;display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.feat-box .ico{width:46%;height:46%}
+.feat h4{font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin-bottom:.5rem;line-height:1.2}
+.feat p{font-size:.78rem;color:var(--muted)}
 
 /* ===========================================================
    QUIETLY CONNECTED + MAP
@@ -417,6 +444,7 @@ a{color:inherit;text-decoration:none}
 .res-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
   grid-auto-rows:230px;gap:18px;padding-bottom:clamp(60px,8vw,110px);
+  max-width:1080px;margin:0 auto;          /* centred, as in the design */
 }
 .res-card{position:relative;overflow:hidden;color:#fff}
 .res-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
