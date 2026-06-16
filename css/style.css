@@ -150,7 +150,7 @@ a{color:inherit;text-decoration:none}
 .site-header{
   position:fixed;top:0;left:0;right:0;z-index:60;
   display:flex;align-items:center;justify-content:space-between;
-  padding:22px var(--pad);
+  padding:34px var(--pad);
   color:#fff;
   /* slightly dark panel across the top, as in the design */
   background:linear-gradient(180deg,rgba(20,16,14,.55) 0%,rgba(20,16,14,.22) 65%,rgba(20,16,14,0) 100%);
@@ -159,15 +159,30 @@ a{color:inherit;text-decoration:none}
 .site-header.scrolled{
   background:rgba(42,38,38,.95);
   backdrop-filter:blur(8px);
-  padding:14px var(--pad);
+  padding:20px var(--pad);
 }
-.nav-left,.nav-right{display:flex;align-items:center;gap:clamp(12px,1.5vw,30px)}
+.nav-left,.nav-right{display:flex;align-items:center;gap:clamp(14px,1.8vw,34px)}
 .nav-left a,.nav-right a,.nav-right .num{
-  font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:400;
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;
   white-space:nowrap;opacity:.95;transition:opacity .3s;
 }
 .nav-left a:hover,.nav-right a:hover{opacity:.6}
 .nav-right .sep{opacity:.4}
+
+/* see-through grey rectangle around the right-hand options (as in the design) */
+.nav-actions{
+  display:flex;align-items:stretch;
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(170,170,170,.12);
+  backdrop-filter:blur(2px);
+}
+.nav-actions a{
+  display:flex;align-items:center;
+  padding:14px clamp(22px,2.6vw,46px);     /* wide box */
+  opacity:.95;
+}
+.nav-actions a:hover{opacity:.6}
+.nav-actions__div{width:1px;background:rgba(255,255,255,.4);align-self:stretch}
 
 .logo{
   position:absolute;left:50%;transform:translateX(-50%);
@@ -228,10 +243,11 @@ a{color:inherit;text-decoration:none}
   max-width:1100px;
 }
 .hero__title h1{
-  font-size:clamp(2.4rem,6.4vw,5.2rem);
-  font-weight:300;letter-spacing:.06em;word-spacing:.16em;line-height:1.08;
+  font-size:clamp(2.2rem,6vw,5rem);
+  font-weight:300;letter-spacing:.06em;word-spacing:.16em;line-height:1.1;
   text-shadow:0 2px 30px rgba(0,0,0,.4);
 }
+.hero__title h1 span{display:block;white-space:nowrap}   /* lock to three lines */
 
 /* ===========================================================
    RED INTRO BLOCK
@@ -520,6 +536,7 @@ a{color:inherit;text-decoration:none}
   .footer .flogo{border-right:0;padding-right:0}
 }
 @media(max-width:560px){
+  .hero__title h1{font-size:7.2vw;word-spacing:.06em;letter-spacing:.03em}
   .features-grid{grid-template-columns:1fr}
   .res-grid{grid-template-columns:1fr;grid-auto-rows:200px}
   .res-card.tall{grid-row:span 1}
