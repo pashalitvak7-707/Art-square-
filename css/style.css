@@ -497,13 +497,14 @@ a{color:inherit;text-decoration:none}
 /* each option is a light-grey box: icon at top, name (Bellet), description (PF DIN) */
 .feat{
   background:#f4f4f4;border-radius:3px;text-align:left;
-  padding:clamp(20px,1.9vw,30px);
-  display:flex;flex-direction:column;min-height:clamp(200px,17vw,240px);
+  padding:clamp(18px,1.7vw,26px);
+  display:flex;flex-direction:column;align-items:flex-start;min-height:clamp(170px,14vw,200px);
 }
-.feat .ico{height:clamp(40px,3.6vw,52px);width:auto;display:block;margin-bottom:auto}
-.feat h4{font-family:var(--serif);font-weight:400;font-size:clamp(1rem,1.25vw,1.2rem);
-  letter-spacing:.04em;text-transform:uppercase;line-height:1.1;margin:18px 0 .5rem}
-.feat p{font-family:var(--sans);font-size:.78rem;color:var(--muted);line-height:1.35}
+.feat .ico{height:clamp(30px,2.5vw,38px);width:auto;max-width:80px;display:block;
+  object-fit:contain;align-self:flex-start;margin-bottom:auto}
+.feat h4{font-family:var(--serif);font-weight:400;font-size:clamp(.82rem,1vw,1rem);
+  letter-spacing:.03em;text-transform:uppercase;line-height:1.12;margin:16px 0 .45rem}
+.feat p{font-family:var(--sans);font-size:.72rem;color:var(--muted);line-height:1.35}
 
 /* ===========================================================
    QUIETLY CONNECTED + MAP
