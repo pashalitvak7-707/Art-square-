@@ -1,0 +1,657 @@
+/* ===========================================================
+   ARTSQR — Art-inspired residences, Limassol
+   Design system
+   =========================================================== */
+
+/* Logo face only — Bellet & PF DIN are licensed and loaded locally below */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap');
+
+/* ---- Display face: BelletRegular ---- */
+@font-face{
+  font-family:'Bellet';
+  src:url('../assets/fonts/Bellet-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Bellet-Regular.ttf')   format('truetype');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+
+/* ---- Text face: PF DIN (PF Din Display Pro) ---- */
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDin-Light.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Light.ttf')   format('truetype');
+  font-weight:300;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDin-Regular.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Regular.ttf')   format('truetype');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDin-Medium.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Medium.ttf')   format('truetype');
+  font-weight:500 600;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'PF DIN';
+  src:url('../assets/fonts/PFDin-Bold.woff2') format('woff2'),
+      url('../assets/fonts/PFDin-Bold.ttf')   format('truetype');
+  font-weight:700;font-style:normal;font-display:swap;
+}
+
+:root{
+  --red:        #9d2d22;
+  --red-intro:  #85251b;
+  --red-deep:   #85251b;
+  --burgundy:   #5a1a1a;
+  --band-grey:  #595959;
+  --red-dark:   #6e1f17;
+  --charcoal:   #2a2626;
+  --cream:      #f2f2f2;
+  --paper:      #faf8f5;
+  --blue-band:  #deecf9;
+  --grey-stat:  #f2f2f2;
+  --grey-garden:#ececec;
+  --peach:      #e7b78f;
+  --ink:        #1d1a18;
+  --muted:      #6b6560;
+  --line:       rgba(255,255,255,.35);
+
+  --serif: 'Bellet', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'PF DIN', 'PFDinTextPro', 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --logo:  'Comfortaa', var(--sans);
+
+  --wrap: 1240px;
+  --pad: clamp(20px, 5vw, 90px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
+
+/* ---------- Typographic helpers ---------- */
+.display{
+  font-family:var(--serif);
+  font-weight:400;
+  line-height:1.02;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.eyebrow{
+  font-family:var(--sans);
+  font-weight:400;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  font-size:.72rem;
+}
+.label{
+  font-family:var(--sans);
+  font-weight:400;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  font-size:.7rem;
+}
+.stat-num{
+  font-family:var(--serif);
+  color:var(--red);
+  font-weight:500;
+  letter-spacing:.02em;
+  font-size:clamp(1.8rem,3vw,2.4rem);
+  line-height:1;
+}
+.stat-label{
+  font-family:var(--serif);
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:clamp(1.1rem,1.6vw,1.35rem);
+  margin-top:.3rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.7em;
+  font-family:var(--sans);
+  letter-spacing:.26em;text-transform:uppercase;
+  font-size:.66rem;font-weight:400;
+  padding:.95em 1.7em;
+  border:1px solid currentColor;
+  background:transparent;color:inherit;cursor:pointer;
+  transition:.35s ease;
+}
+.btn:hover{background:currentColor}
+.btn:hover span{color:var(--red)}
+.btn--solid{background:var(--peach);border-color:var(--peach);color:#3a2418}
+.btn--solid:hover{background:#f0c6a4}
+.btn--ghost-light{color:#fff}
+.btn--ghost-light:hover span{color:var(--charcoal)}
+/* white-filled button with burgundy text (feature "explore" buttons) */
+.btn--white{background:#fff;border-color:#fff;color:var(--red)}
+.btn--white span{color:var(--red)}
+.btn--white:hover{background:rgba(255,255,255,.85);border-color:rgba(255,255,255,.85)}
+.btn--white:hover span{color:var(--red)}
+/* burgundy-filled button with light text (penthouse CTA) */
+.btn--burgundy{display:inline-block;background:var(--red);border-color:var(--red);color:#f1f8ff}
+/* fully-black button with light text */
+.btn--black{display:inline-block;background:#161616;border-color:#161616;color:#fff}
+.btn--black:hover{background:#000;border-color:#000;color:#fff}
+.btn--burgundy span{color:#f1f8ff}
+.btn--burgundy:hover{background:#86251c;border-color:#86251c;color:#fff}
+.btn--burgundy:hover span{color:#fff}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:.6em;
+  letter-spacing:.26em;text-transform:uppercase;font-size:.66rem;
+  color:var(--red);transition:gap .3s ease;
+}
+.link-arrow:hover{gap:1.1em}
+
+/* ===========================================================
+   HEADER / NAV
+   =========================================================== */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:34px var(--pad);
+  color:#fff;
+  /* slightly dark panel across the top, as in the design */
+  background:linear-gradient(180deg,rgba(20,16,14,.55) 0%,rgba(20,16,14,.22) 65%,rgba(20,16,14,0) 100%);
+  transition:background .4s ease, padding .4s ease, color .4s ease;
+}
+.site-header.scrolled{
+  background:rgba(42,38,38,.95);
+  backdrop-filter:blur(8px);
+  padding:20px var(--pad);
+}
+.nav-left,.nav-right{display:flex;align-items:center;gap:clamp(14px,1.8vw,34px)}
+.nav-left a,.nav-right a,.nav-right .num{
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;
+  white-space:nowrap;opacity:.95;transition:opacity .3s;
+}
+.nav-left a:hover,.nav-right a:hover{opacity:.6}
+.nav-right .sep{opacity:.4}
+
+/* see-through grey rectangle around the right-hand options (as in the design) */
+.nav-actions{
+  display:flex;align-items:stretch;
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(170,170,170,.12);
+  backdrop-filter:blur(2px);
+}
+.nav-actions a{
+  display:flex;align-items:center;
+  padding:14px clamp(22px,2.6vw,46px);     /* wide box */
+  opacity:.95;
+}
+.nav-actions a:hover{opacity:.6}
+.nav-actions__div{width:1px;background:rgba(255,255,255,.4);align-self:stretch}
+
+.logo{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:block;color:#fff;
+}
+/* The ARTSQR wordmark, replicated from the brand artwork and recoloured
+   to the current text colour via CSS mask. */
+.logo-mark{
+  display:block;
+  width:2.7em;height:2.9em;
+  background-color:currentColor;
+  -webkit-mask:url('../assets/img/artsqr-logo.png') center/contain no-repeat;
+          mask:url('../assets/img/artsqr-logo.png') center/contain no-repeat;
+}
+.logo .logo-mark{font-size:1rem;width:2.7em;height:2.9em}
+
+.nav-toggle{display:none;background:none;border:0;color:inherit;cursor:pointer}
+.nav-toggle span{display:block;width:26px;height:2px;background:currentColor;margin:5px 0;transition:.3s}
+
+/* ===========================================================
+   HERO
+   =========================================================== */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  color:#fff;overflow:hidden;
+}
+.hero__bg{position:absolute;inset:0;overflow:hidden;background:#15110e}
+.hero__bg .kb{
+  position:absolute;inset:0;
+  width:100%;height:100%;object-fit:cover;
+  transform-origin:78% 42%;            /* zoom into the right-hand side of the building */
+  opacity:0;
+  animation:heroZoom 18s ease-in-out infinite;
+  will-change:transform,opacity;
+}
+/* Two layers run the same loop half a cycle apart and crossfade, so the image
+   slowly zooms in, returns to the original wide shot, and zooms again
+   seamlessly (no hard cut). */
+.hero__bg .kb2{animation-delay:-9s}
+@keyframes heroZoom{
+  0%   {transform:scale(1.00); opacity:0}
+  10%  {opacity:1}
+  60%  {opacity:1}
+  70%  {transform:scale(1.16); opacity:0}
+  100% {transform:scale(1.16); opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero__bg .kb1{animation:none;opacity:1}
+  .hero__bg .kb2{display:none}
+}
+.hero__bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 100%);
+}
+.hero__title{
+  position:relative;z-index:2;
+  padding:0 var(--pad) clamp(48px,8vh,110px);
+  max-width:1100px;
+}
+.hero__title h1{
+  font-size:clamp(2.2rem,6vw,5rem);
+  font-weight:300;letter-spacing:.06em;word-spacing:.16em;line-height:1.1;
+  text-shadow:0 2px 30px rgba(0,0,0,.4);
+}
+.hero__title h1 span{display:block;white-space:nowrap}   /* lock to three lines */
+
+/* ===========================================================
+   RED INTRO BLOCK
+   =========================================================== */
+.red{background:var(--red-intro);color:#fff}
+.intro{padding:clamp(60px,9vw,130px) 0}
+
+/* zig-zag stack of intro statements: left / right / left of centre */
+.intro-stack{display:block;text-align:center}
+.iblock{max-width:540px;margin-bottom:clamp(40px,6vw,78px)}
+.iblock--left{margin-left:13%;margin-right:auto}
+.iblock--right{margin-left:auto;margin-right:13%}
+.iblock h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:300;line-height:1.06}
+.iblock p{font-size:.92rem;opacity:.85;margin-top:1rem;letter-spacing:.02em;line-height:1.5}
+
+.art{
+  margin-top:clamp(40px,6vw,80px);
+  display:grid;grid-template-columns:repeat(12,1fr);
+  gap:clamp(28px,4vw,60px);align-items:center;
+}
+.art__images{grid-column:1/7;position:relative}
+.art__images img{display:block;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.art__images .a1{width:80%;position:relative;z-index:1}
+.art__images .a2{width:56%;position:relative;z-index:2;margin-top:-30%;margin-left:38%}
+.art__text{grid-column:8/13}
+.art__text h3{font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:300;margin:0 0 1rem}
+.art__text p{opacity:.86;font-size:.95rem;max-width:42ch;margin-bottom:1.2rem}
+.art__text .by{font-style:italic;font-family:var(--serif);font-size:1.6rem;letter-spacing:.04em;margin-bottom:.6rem}
+.art__addr{margin-bottom:clamp(48px,7vw,96px)}
+
+/* rise parallax — elements start lower and settle into the final layout */
+.rise{will-change:transform}
+
+/* ===========================================================
+   CHOOSE YOUR RHYTHM (accordion)
+   =========================================================== */
+.section{padding:clamp(60px,9vw,130px) 0}
+.section--paper{background:var(--paper)}
+.center-title{text-align:center;margin-bottom:clamp(40px,6vw,80px)}
+.center-title h2{
+  font-size:clamp(2.6rem,6vw,4.4rem);color:var(--red);font-weight:300;
+  line-height:1.04;
+}
+.center-title p{max-width:48ch;margin:1.4rem auto 0;color:var(--muted);font-size:.9rem}
+
+.rhythm{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+.accordion__item{border-top:1px solid #d8d2cb}
+.accordion__item:last-child{border-bottom:1px solid #d8d2cb}
+.accordion__head{
+  width:100%;background:none;border:0;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.5rem .2rem;text-align:left;
+  font-family:var(--sans);font-size:1.2rem;letter-spacing:.1em;font-weight:500;
+  text-transform:uppercase;color:var(--ink);transition:color .3s;
+}
+.accordion__item.open .accordion__head{color:var(--red)}
+.accordion__head .chev{display:flex;align-items:center;transition:transform .35s ease;color:inherit;flex:none}
+.accordion__head .chev svg{width:30px;height:18px;display:block}
+.accordion__item.open .chev{transform:rotate(180deg)}
+.accordion__body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.accordion__inner{padding:0 .2rem 1.6rem}
+.accordion__inner .big-num{font-family:var(--sans);font-size:2.6rem;color:var(--ink);font-weight:400;line-height:1}
+.accordion__inner p{color:var(--muted);font-size:.92rem;margin:.5rem 0 1rem}
+/* auto-rotating image slider with square indicators */
+.rhythm__media{position:relative}
+.rhythm-slider{position:relative;padding-bottom:75%;overflow:hidden}  /* 4:3 */
+.rhythm-slider .slides{position:absolute;inset:0}
+.rhythm-slider .slide{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s ease;
+}
+.rhythm-slider .slide.is-active{opacity:1}
+.rhythm-slider .dots{
+  position:absolute;left:50%;transform:translateX(-50%);bottom:16px;z-index:3;
+  display:flex;gap:6px;
+}
+.rhythm-slider .dot{
+  width:16px;height:16px;padding:0;border:0;border-radius:0;cursor:pointer;
+  background:rgba(255,255,255,.5);transition:background .3s ease;
+}
+.rhythm-slider .dot:hover{background:rgba(255,255,255,.78)}
+.rhythm-slider .dot.is-active{background:#fff}
+
+/* ===========================================================
+   SIGNATURE banded hero
+   =========================================================== */
+.band{background:var(--charcoal);color:#fff;text-align:center;padding:16px}
+.band .label{opacity:.85;letter-spacing:.72em;padding-left:.72em;font-size:.86rem}  /* larger, wide tracking as in the design */
+.band--signature{background:var(--burgundy)}      /* penthouse signature — burgundy/red */
+.band--grey{background:var(--band-grey);border-top:13px solid var(--burgundy);  /* thin burgundy line above grey */
+  padding-top:23px;padding-bottom:23px}            /* family signature & courtyard — grey */
+.band--comfort{background:var(--red);padding:24px}  /* comfort — burgundy, larger */
+.band--quiet{background:var(--blue-band);color:var(--ink)}
+.band--quiet .label{opacity:.65}
+.feature{
+  position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;overflow:hidden;
+}
+.feature--large{min-height:92vh}                    /* courtyard / penthouse panels — larger */
+.feature img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.32)}
+.feature__inner{position:relative;z-index:2;padding:var(--pad);max-width:1000px}
+.feature__inner h2{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:300;letter-spacing:.04em;line-height:1.04}
+.feature-lines span{display:block;white-space:nowrap}   /* lock heading to its three lines */
+.feature__inner .sub{margin:1.1rem 0 1.9rem;letter-spacing:.04em;font-size:clamp(1.1rem,1.7vw,1.4rem);opacity:.95}
+
+/* ===========================================================
+   STATS (light blue blocks with images)
+   =========================================================== */
+.stats{background:var(--blue-band)}
+.stats--grey{background:var(--grey-stat)}      /* family — grey/white */
+.stats--garden{background:var(--grey-garden)}  /* garden — grey (3rd page) */
+.stats-lead{padding:clamp(50px,7vw,100px) 0 0}
+.stats-lead .small{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--muted)}
+.stat-cols{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  gap:clamp(24px,3vw,44px);padding:clamp(40px,6vw,80px) 0;align-items:center;
+}
+.stat-block .stat-num{display:block}
+.stat-img{overflow:hidden;margin:0}
+.stat-img img{width:100%;height:100%;object-fit:cover;display:block}
+/* penthouse CTA sits on a paler blue band, as in the design */
+.pc-cta{background:#f1f8ff}
+.fc-cta{background:#fff}   /* family CTA on white, distinct from the grey above */
+.fc-cta .stats-cta{padding-top:clamp(40px,6vw,80px)}
+.fc-cta .stats-cta h3{color:#141414}
+.stats-cta{text-align:center;padding-bottom:clamp(50px,7vw,100px)}
+.pc-cta .stats-cta{padding-top:clamp(40px,6vw,80px)}
+.stats-cta h3 + .btn{margin-top:1.6rem}
+.stats-cta h3{font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:400;color:var(--ink);font-family:var(--serif);letter-spacing:.05em;text-transform:uppercase}
+.stats-cta h3 em{color:var(--red);font-style:normal}
+.stats-cta--red h3{color:var(--red)}
+.stats-cta--red h3 em{color:var(--red)}
+
+/* ---------- Editorial collage (penthouse / family) ---------- */
+.collage{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(16px,2vw,34px);
+  align-items:start;
+  padding:clamp(50px,7vw,100px) 0 clamp(30px,4vw,60px);
+}
+.col{display:flex;flex-direction:column;gap:clamp(30px,4vw,64px)}
+.cell-text{display:flex;flex-direction:column;justify-content:center}
+.cell-text.stat .stat-num{display:block}
+.lead-italic{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--muted);line-height:1.3}
+.cell-img{overflow:hidden;margin:0;will-change:transform;position:relative;box-shadow:0 24px 50px rgba(0,0,0,.10)}
+.cell-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cell-img.plan{background:#fff;padding:clamp(16px,2vw,30px);box-shadow:none}
+.cell-img.plan img{object-fit:contain}
+/* images extend toward the centre so adjacent images overlap slightly */
+.col--left .cell-img{width:112%;margin-right:-12%;z-index:1}
+.col--right .cell-img{width:112%;margin-left:-12%;z-index:2}
+
+/* ---------- Penthouse "finest expression" collage (absolute, matches design) ---------- */
+.pc-wrap{padding-top:clamp(50px,7vw,100px);padding-bottom:clamp(30px,4vw,64px)}
+.pcollage{position:relative;width:100%;padding-bottom:171%}   /* aspect of the design */
+.pcollage > *{position:absolute;margin:0}
+.pc-img{overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,.16)}
+.pc-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pc-plan{background:#fff;padding:1.4%}
+.pc-plan img{object-fit:contain}
+.pc-finest{color:var(--red);font-family:var(--sans);font-weight:400;
+  font-size:clamp(.72rem,1.05vw,.92rem);line-height:1.35;letter-spacing:.01em;z-index:10}
+.pc-stat{z-index:10}
+.pc-stat .stat-num{display:block}
+
+/* positions (left/width = % of width, top/height = % of height) */
+.pc-finest {left:9%;  top:3.4%}
+.pc-total  {left:15%; top:8.8%}
+.pc-living {left:42%; top:4.5%;  width:58%; height:22.5%; z-index:1}
+.pc-plan   {left:3%;  top:21.5%; width:49%; height:18%;   z-index:2}
+.pc-indoor {left:55%; top:29.5%}
+.pc-bed    {left:44%; top:37.5%; width:56%; height:20.5%; z-index:3}
+.pc-bath   {left:3%;  top:55.5%; width:49%; height:21%;   z-index:4}
+.pc-veranda{left:55%; top:64%}
+.pc-roofg  {left:10%; top:84%}
+.pc-roof   {left:44%; top:76.5%; width:56%; height:18.5%; z-index:5}
+
+/* ---------- Family stats collage (absolute, matches design) ---------- */
+.fcollage{padding-bottom:158%}
+.fc-plan   {left:11%; top:5%;    width:39%; height:27%;   z-index:1; background:#fff; padding:1.4%}
+.fc-plan img{object-fit:contain}
+.fc-total  {left:55%; top:6.5%}
+.fc-living {left:38%; top:24%;   width:57%; height:23%;   z-index:2}
+.fc-indoor {left:6%;  top:36.5%}
+.fc-bed    {left:14%; top:47.5%; width:45%; height:22%;   z-index:3}
+.fc-veranda{left:62%; top:51.5%}
+.fc-parking{left:62%; top:60%}
+.fc-baths  {left:9%;  top:73.5%}
+.fc-bath   {left:38%; top:71.5%; width:46%; height:22%;   z-index:4}
+/* family stat numbers are grey (not red, as on the blue page) */
+.stats--grey .stat-num{color:#767474}
+
+/* ---------- Garden stats collage (absolute, matches design) ---------- */
+.gcollage{padding-bottom:89%}
+.gc-lead{left:10%; top:8%; width:40%; z-index:10;
+  color:var(--burgundy); font-family:var(--sans); font-weight:400;
+  font-size:clamp(.84rem,1.1vw,1rem); line-height:1.55; letter-spacing:.01em}
+.gc-aerial{left:52%; top:7%;  width:35%; height:39%; z-index:1}
+.gc-garden{left:25%; top:31%}
+.gc-pool  {left:5%;  top:42%; width:42%; height:40%; z-index:2}
+.gc-lap   {left:51%; top:51%}
+.gc-res   {left:31%; top:84%}
+/* garden stat numbers are burgundy */
+.stats--garden .stat-num{color:var(--burgundy)}
+
+/* ---------- Parallax floating images ---------- */
+.parallax{will-change:transform}
+.parallax img{will-change:transform}
+
+@media(max-width:760px){
+  .collage{grid-template-columns:1fr;gap:clamp(30px,8vw,46px)}
+  .col{gap:clamp(30px,8vw,46px)}
+  .col--right{padding-top:0}
+  /* penthouse collage collapses to a simple stack */
+  .pcollage{padding-bottom:0;display:flex;flex-direction:column;gap:26px}
+  .pcollage > *{position:static!important;left:auto;top:auto;width:auto!important;height:auto!important;transform:none!important}
+  .pc-img{aspect-ratio:3/2}
+  .pc-plan{aspect-ratio:auto}
+  .pc-plan img{height:auto}
+}
+
+/* span helpers */
+.c1-4{grid-column:span 4}.c1-3{grid-column:span 3}.c1-6{grid-column:span 6}
+.c1-5{grid-column:span 5}.c1-7{grid-column:span 7}.c1-8{grid-column:span 8}
+
+/* ===========================================================
+   COMFORT feature row
+   =========================================================== */
+/* burgundy panel directly under the comfort image */
+.comfort-strip{height:46px;background:var(--red)}
+.features{background:#fbfbfb;padding:clamp(40px,5vw,80px) 0}
+.features-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.4vw,22px)}
+/* each option is a light-grey box: icon at top, name (Bellet), description (PF DIN) */
+.feat{
+  background:#f4f4f4;border-radius:3px;text-align:left;
+  padding:clamp(18px,1.7vw,26px);
+  display:flex;flex-direction:column;align-items:flex-start;min-height:clamp(170px,14vw,200px);
+}
+.feat .ico{max-height:clamp(34px,2.8vw,42px);max-width:72px;width:auto;height:auto;display:block;
+  align-self:flex-start;margin-bottom:auto}
+.feat h4{font-family:var(--serif);font-weight:400;font-size:clamp(.82rem,1vw,1rem);
+  letter-spacing:.03em;text-transform:uppercase;line-height:1.12;margin:16px 0 .45rem}
+.feat p{font-family:var(--sans);font-size:.72rem;color:var(--muted);line-height:1.35}
+
+/* ===========================================================
+   QUIETLY CONNECTED + MAP
+   =========================================================== */
+/* full-width image with the text overlaid on the right */
+.connect-feat{position:relative;width:100%;min-height:clamp(500px,60vw,900px);
+  overflow:hidden;display:flex;align-items:center}
+.connect-feat > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.connect-feat::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.18) 72%)}
+.connect-feat__text{position:relative;z-index:2;margin-left:auto;
+  width:52%;padding-right:clamp(24px,5vw,80px);color:#fff;
+  text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.connect-feat__text h2{font-size:clamp(2.6rem,6vw,5.2rem);font-weight:300;line-height:1.05;letter-spacing:.02em}
+.connect-feat__text h2 span{display:block;white-space:nowrap}
+.connect-feat__text p{font-family:var(--sans);font-size:clamp(1.05rem,1.5vw,1.35rem);
+  line-height:1.5;margin-top:1.6rem;max-width:34ch}
+.blue-stripe{height:14px;background:var(--blue-band)}
+
+.connect-map{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center;padding:clamp(50px,7vw,100px) 0}
+.connect-map .map img{width:100%;border:1px solid #e3ddd6}
+.places{list-style:none}
+.places li{display:flex;align-items:center;gap:1rem;padding:1.1rem 0;border-bottom:1px solid #ded8d1}
+.places li:first-child{border-top:1px solid #ded8d1}
+.places .n{font-family:var(--serif);color:var(--red);font-size:1.1rem;width:1.4em}
+.places .name{flex:1;letter-spacing:.06em;font-size:.92rem}
+.places .time{font-size:.66rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+
+/* ===========================================================
+   FINAL RED CTA
+   =========================================================== */
+.cta{background:var(--red);color:#fff;padding:clamp(60px,9vw,120px) 0;position:relative}
+.cta-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:start}
+.cta h2{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:300;letter-spacing:.04em;max-width:16ch}
+.cta p{opacity:.85;max-width:46ch;margin:1.4rem 0 2rem;font-size:.95rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:14px}
+.cta .logo-corner{justify-self:end;color:#fff}
+.cta .logo-corner .logo-mark{width:84px;height:90px}
+
+/* ===========================================================
+   FOOTER
+   =========================================================== */
+.footer{background:var(--charcoal);color:#cfc8c2;padding:clamp(50px,7vw,90px) 0}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;align-items:start}
+.footer .flogo{color:#e9dfc9;border-right:1px solid #4a4440;padding-right:30px}
+.footer .flogo .logo-mark{width:74px;height:80px}
+.footer h5{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;margin-bottom:1rem;font-weight:500}
+.footer p,.footer a{font-size:.85rem;line-height:1.8;color:#b3aca6}
+.footer a:hover{color:#fff}
+.footer-badges{display:flex;gap:16px;align-items:center;margin-top:8px}
+.footer-badges .makespace{
+  border:2px solid #cfc8c2;color:#cfc8c2;font-weight:700;letter-spacing:.12em;
+  font-size:.62rem;padding:14px 10px;line-height:1.2;text-align:center;
+}
+.footer-badges img{height:62px;width:auto}
+.footer-bottom{border-top:1px solid #423c39;margin-top:40px;padding-top:24px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.74rem;color:#8c857f}
+
+/* ===========================================================
+   RESIDENCES PAGE (page 2)
+   =========================================================== */
+.res-hero{padding:clamp(110px,14vw,170px) 0 clamp(30px,4vw,60px);text-align:center}
+.res-hero h1{font-size:clamp(2.6rem,6vw,4.6rem);color:var(--red);font-weight:300;line-height:1.05}
+.res-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:230px;gap:18px;padding-bottom:clamp(60px,8vw,110px);
+  max-width:1080px;margin:0 auto;          /* centred, as in the design */
+}
+.res-card{position:relative;overflow:hidden;color:#fff}
+.res-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.res-card:hover img{transform:scale(1.05)}
+.res-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.55))}
+.res-card .name{position:absolute;left:24px;bottom:22px;z-index:2;font-family:var(--serif);
+  font-size:1.5rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.05}
+.res-card--red{background:var(--red);display:flex;flex-direction:column;justify-content:center;padding:30px}
+.res-card--red::after{display:none}
+.res-card--red p{font-size:.85rem;opacity:.88;margin-bottom:1.2rem}
+.res-card--reddark{background:var(--red-deep)}
+.res-card.tall{grid-row:span 2}
+.res-card.wide{grid-column:span 1}
+
+/* Explicit page-2 arrangement:
+   row1: 1-bed | 2-bed | white card
+   row2: (gap) | 3-bed | dark-red card
+   row3: penthouse | red card (span 2) */
+.gp-a{grid-column:1;grid-row:1}
+.gp-b{grid-column:2;grid-row:1}
+.gp-c{grid-column:3;grid-row:1}
+.gp-d{grid-column:2;grid-row:2}
+.gp-e{grid-column:3;grid-row:2}
+.gp-f{grid-column:1;grid-row:3}
+.gp-g{grid-column:2 / 4;grid-row:3}
+
+/* ---- Auto-rotating slider with square indicators ---- */
+.res-slider .slides{position:absolute;inset:0}
+.res-slider .slide{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s ease, transform .6s ease;
+}
+.res-slider .slide.is-active{opacity:1}
+.res-slider:hover .slide.is-active{transform:scale(1.05)}
+.res-slider .dots{
+  position:absolute;left:24px;bottom:18px;z-index:3;
+  display:flex;gap:8px;
+}
+.res-slider .dot{
+  width:11px;height:11px;padding:0;border:1px solid rgba(255,255,255,.85);
+  background:transparent;cursor:pointer;border-radius:0;          /* squares */
+  transition:background .3s ease, transform .3s ease;
+}
+.res-slider .dot:hover{background:rgba(255,255,255,.5)}
+.res-slider .dot.is-active{background:#fff}
+/* lift the title so it doesn't collide with the dots */
+.res-slider .name{bottom:42px}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+@media(max-width:900px){
+  .nav-left{display:none}
+  .nav-right{display:none}
+  .nav-toggle{display:block}
+  .site-header.open .nav-left,.site-header.open .nav-right{
+    display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:rgba(42,38,38,.98);padding:20px;gap:18px;
+  }
+  .art,.rhythm,.connect-map,.cta-grid,.footer-grid{grid-template-columns:1fr;gap:34px}
+  .connect-feat__text{width:auto;margin-left:0;padding:0 clamp(20px,6vw,40px)}
+  .connect-feat__text h2 span{white-space:normal}
+  .connect-feat::after{background:linear-gradient(90deg,rgba(0,0,0,.25),rgba(0,0,0,.45))}
+  .iblock{max-width:none;margin-left:0;margin-right:0}
+  .art__images{grid-column:1/-1;min-height:340px}
+  .art__text{grid-column:1/-1}
+  .stat-cols{grid-template-columns:repeat(6,1fr)}
+  .c1-4,.c1-3,.c1-5,.c1-7,.c1-8{grid-column:span 6}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .res-grid{grid-template-columns:1fr 1fr}
+  .gp-a,.gp-b,.gp-c,.gp-d,.gp-e,.gp-f,.gp-g{grid-column:auto;grid-row:auto}
+  .gp-g{grid-column:span 2}
+  .cta .logo-corner{justify-self:start}
+  .footer .flogo{border-right:0;padding-right:0}
+}
+@media(max-width:560px){
+  .hero__title h1{font-size:7.2vw;word-spacing:.06em;letter-spacing:.03em}
+  .features-grid{grid-template-columns:1fr}
+  .res-grid{grid-template-columns:1fr;grid-auto-rows:200px}
+  .res-card.tall{grid-row:span 1}
+  .gp-g{grid-column:auto}
+  .footer-bottom{flex-direction:column}
+}
