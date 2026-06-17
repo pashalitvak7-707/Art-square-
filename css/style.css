@@ -254,29 +254,32 @@ a{color:inherit;text-decoration:none}
    =========================================================== */
 .red{background:var(--red-intro);color:#fff}
 .intro{padding:clamp(60px,9vw,130px) 0}
-.intro-grid{
-  display:grid;grid-template-columns:repeat(12,1fr);
-  gap:clamp(30px,5vw,70px);align-items:start;
-}
-.intro h2{font-size:clamp(2rem,3.6vw,3rem);font-weight:300}
-.intro p{font-size:.92rem;opacity:.85;max-width:30ch;margin-top:1rem;letter-spacing:.02em}
-.intro .col-a{grid-column:1/6}
-.intro .col-b{grid-column:7/13;align-self:end}
-.intro .big{font-size:clamp(2.4rem,4.4vw,3.6rem);font-weight:300;line-height:1.04}
+
+/* zig-zag stack of intro statements: left / right / left of centre */
+.intro-stack{display:block;text-align:center}
+.iblock{max-width:540px;margin-bottom:clamp(40px,6vw,78px)}
+.iblock--left{margin-left:13%;margin-right:auto}
+.iblock--right{margin-left:auto;margin-right:13%}
+.iblock h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:300;line-height:1.06}
+.iblock p{font-size:.92rem;opacity:.85;margin-top:1rem;letter-spacing:.02em;line-height:1.5}
 
 .art{
-  margin-top:clamp(60px,9vw,120px);
+  margin-top:clamp(40px,6vw,80px);
   display:grid;grid-template-columns:repeat(12,1fr);
   gap:clamp(28px,4vw,60px);align-items:center;
 }
-.art__images{grid-column:1/7;position:relative;min-height:420px}
-.art__images img{position:absolute;box-shadow:0 30px 60px rgba(0,0,0,.35)}
-.art__images .a1{width:58%;top:0;left:0}
-.art__images .a2{width:46%;bottom:0;right:4%}
+.art__images{grid-column:1/7;position:relative}
+.art__images img{display:block;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.art__images .a1{width:80%;position:relative;z-index:1}
+.art__images .a2{width:56%;position:relative;z-index:2;margin-top:-30%;margin-left:38%}
 .art__text{grid-column:8/13}
-.art__text h3{font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:300;margin:.4rem 0 1rem}
-.art__text p{opacity:.86;font-size:.95rem;max-width:42ch;margin-bottom:1.6rem}
-.art__text .by{font-style:italic;font-family:var(--serif);font-size:1.5rem;letter-spacing:.04em}
+.art__text h3{font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:300;margin:0 0 1rem}
+.art__text p{opacity:.86;font-size:.95rem;max-width:42ch;margin-bottom:1.2rem}
+.art__text .by{font-style:italic;font-family:var(--serif);font-size:1.6rem;letter-spacing:.04em;margin-bottom:.6rem}
+.art__addr{margin-bottom:clamp(48px,7vw,96px)}
+
+/* rise parallax — elements start lower and settle into the final layout */
+.rise{will-change:transform}
 
 /* ===========================================================
    CHOOSE YOUR RHYTHM (accordion)
@@ -520,10 +523,10 @@ a{color:inherit;text-decoration:none}
     display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
     background:rgba(42,38,38,.98);padding:20px;gap:18px;
   }
-  .intro-grid,.art,.rhythm,.connect,.connect-map,.cta-grid,.footer-grid{grid-template-columns:1fr;gap:34px}
+  .art,.rhythm,.connect,.connect-map,.cta-grid,.footer-grid{grid-template-columns:1fr;gap:34px}
   .connect{gap:0}
   .connect__media{min-height:48vh}
-  .intro .col-a,.intro .col-b{grid-column:1/-1}
+  .iblock{max-width:none;margin-left:0;margin-right:0}
   .art__images{grid-column:1/-1;min-height:340px}
   .art__text{grid-column:1/-1}
   .stat-cols{grid-template-columns:repeat(6,1fr)}

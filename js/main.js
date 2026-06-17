@@ -91,6 +91,50 @@
   }
 
   /* -------------------------------------------------------
+     "Rise" parallax (red intro section). Every word/image
+     starts lower and slides UP into its final position
+     (the design layout). Motion is fast at first then
+     decelerates (ease-out). Grouped by data-rise amplitude:
+     the artist image + "Art by Millo" rise faster than the
+     building image + "The art as part of the address".
+  ------------------------------------------------------- */
+  var riseNodes = [].slice.call(document.querySelectorAll('.rise'));
+  if (!reduceMotion && riseNodes.length) {
+    var rEnabled = window.innerWidth > 760;
+    var rItems = riseNodes.map(function (el) {
+      return { el: el, amp: parseFloat(el.getAttribute('data-rise')) || 80, cur: 0, target: 0 };
+    });
+    function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
+    function rMeasure() {
+      if (!rEnabled) { rItems.forEach(function (s) { s.target = 0; }); return; }
+      var vh = window.innerHeight;
+      var start = vh * 1.02;    // begins rising just below the fold
+      var settle = vh * 0.60;   // fully settled (final layout) at this line
+      rItems.forEach(function (s) {
+        var r = s.el.getBoundingClientRect();
+        var raw = (start - r.top) / (start - settle);
+        if (raw < 0) raw = 0; else if (raw > 1) raw = 1;
+        var e = easeOutCubic(raw);          // fast first, then slow
+        s.target = (1 - e) * s.amp;         // +amp (below) -> 0 (final)
+      });
+    }
+    function rFrame() {
+      rItems.forEach(function (s) {
+        s.cur += (s.target - s.cur) * 0.18;
+        s.el.style.transform = 'translate3d(0,' + s.cur.toFixed(2) + 'px,0)';
+      });
+      requestAnimationFrame(rFrame);
+    }
+    window.addEventListener('scroll', function () { rMeasure(); }, { passive: true });
+    window.addEventListener('resize', function () {
+      rEnabled = window.innerWidth > 760;
+      rMeasure();
+    });
+    rMeasure();
+    requestAnimationFrame(rFrame);
+  }
+
+  /* -------------------------------------------------------
      Residence sliders — auto-rotate with square indicators
      that also change the image when clicked.
   ------------------------------------------------------- */
