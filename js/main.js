@@ -138,7 +138,7 @@
      Residence sliders — auto-rotate with square indicators
      that also change the image when clicked.
   ------------------------------------------------------- */
-  [].slice.call(document.querySelectorAll('.res-slider')).forEach(function (slider) {
+  [].slice.call(document.querySelectorAll('.res-slider, .rhythm-slider')).forEach(function (slider) {
     var slides = slider.querySelectorAll('.slide');
     var dots = slider.querySelectorAll('.dot');
     if (slides.length < 2) return;
