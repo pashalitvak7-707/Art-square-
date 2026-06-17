@@ -510,9 +510,9 @@ a{color:inherit;text-decoration:none}
    QUIETLY CONNECTED + MAP
    =========================================================== */
 /* full-width image with the text overlaid on the right */
-.connect-feat{position:relative;width:100%;min-height:clamp(460px,50vw,700px);
+.connect-feat{position:relative;width:100%;min-height:clamp(500px,60vw,900px);
   overflow:hidden;display:flex;align-items:center}
-.connect-feat > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.connect-feat > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .connect-feat::after{content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.18) 72%)}
 .connect-feat__text{position:relative;z-index:2;margin-left:auto;
