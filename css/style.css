@@ -397,6 +397,31 @@ a{color:inherit;text-decoration:none}
 .col--left .cell-img{width:112%;margin-right:-12%;z-index:1}
 .col--right .cell-img{width:112%;margin-left:-12%;z-index:2}
 
+/* ---------- Penthouse "finest expression" collage (absolute, matches design) ---------- */
+.pc-wrap{padding-top:clamp(50px,7vw,100px);padding-bottom:clamp(30px,4vw,64px)}
+.pcollage{position:relative;width:100%;padding-bottom:171%}   /* aspect of the design */
+.pcollage > *{position:absolute;margin:0}
+.pc-img{overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,.16)}
+.pc-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pc-plan{background:#fff;padding:1.4%}
+.pc-plan img{object-fit:contain}
+.pc-finest{color:var(--red);font-family:var(--sans);font-weight:400;
+  font-size:clamp(.72rem,1.05vw,.92rem);line-height:1.35;letter-spacing:.01em;z-index:10}
+.pc-stat{z-index:10}
+.pc-stat .stat-num{display:block}
+
+/* positions (left/width = % of width, top/height = % of height) */
+.pc-finest {left:9%;  top:3.4%}
+.pc-total  {left:15%; top:8.8%}
+.pc-living {left:42%; top:4.5%;  width:58%; height:22.5%; z-index:1}
+.pc-plan   {left:3%;  top:21.5%; width:49%; height:18%;   z-index:2}
+.pc-indoor {left:55%; top:29.5%}
+.pc-bed    {left:44%; top:37.5%; width:56%; height:20.5%; z-index:3}
+.pc-bath   {left:3%;  top:55.5%; width:49%; height:21%;   z-index:4}
+.pc-veranda{left:55%; top:64%}
+.pc-roofg  {left:10%; top:84%}
+.pc-roof   {left:44%; top:76.5%; width:56%; height:18.5%; z-index:5}
+
 /* ---------- Parallax floating images ---------- */
 .parallax{will-change:transform}
 .parallax img{will-change:transform}
@@ -405,6 +430,12 @@ a{color:inherit;text-decoration:none}
   .collage{grid-template-columns:1fr;gap:clamp(30px,8vw,46px)}
   .col{gap:clamp(30px,8vw,46px)}
   .col--right{padding-top:0}
+  /* penthouse collage collapses to a simple stack */
+  .pcollage{padding-bottom:0;display:flex;flex-direction:column;gap:26px}
+  .pcollage > *{position:static!important;left:auto;top:auto;width:auto!important;height:auto!important;transform:none!important}
+  .pc-img{aspect-ratio:3/2}
+  .pc-plan{aspect-ratio:auto}
+  .pc-plan img{height:auto}
 }
 
 /* span helpers */
