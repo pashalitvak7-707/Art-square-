@@ -432,6 +432,21 @@ a{color:inherit;text-decoration:none}
 .pc-roofg  {left:10%; top:84%}
 .pc-roof   {left:44%; top:76.5%; width:56%; height:18.5%; z-index:5}
 
+/* ---------- Family stats collage (absolute, matches design) ---------- */
+.fcollage{padding-bottom:158%}
+.fc-plan   {left:11%; top:5%;    width:39%; height:27%;   z-index:1; background:#fff; padding:1.4%}
+.fc-plan img{object-fit:contain}
+.fc-total  {left:55%; top:6.5%}
+.fc-living {left:38%; top:24%;   width:57%; height:23%;   z-index:2}
+.fc-indoor {left:6%;  top:36.5%}
+.fc-bed    {left:14%; top:47.5%; width:45%; height:22%;   z-index:3}
+.fc-veranda{left:62%; top:51.5%}
+.fc-parking{left:62%; top:60%}
+.fc-baths  {left:9%;  top:73.5%}
+.fc-bath   {left:38%; top:71.5%; width:46%; height:22%;   z-index:4}
+/* family stat numbers are grey (not red, as on the blue page) */
+.stats--grey .stat-num{color:#767474}
+
 /* ---------- Parallax floating images ---------- */
 .parallax{will-change:transform}
 .parallax img{will-change:transform}
