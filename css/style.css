@@ -364,6 +364,7 @@ a{color:inherit;text-decoration:none}
 .feature::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.32)}
 .feature__inner{position:relative;z-index:2;padding:var(--pad);max-width:1000px}
 .feature__inner h2{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:300;letter-spacing:.04em;line-height:1.04}
+.feature-lines span{display:block;white-space:nowrap}   /* lock heading to its three lines */
 .feature__inner .sub{margin:1.1rem 0 1.9rem;letter-spacing:.04em;font-size:clamp(1.1rem,1.7vw,1.4rem);opacity:.95}
 
 /* ===========================================================
@@ -452,6 +453,19 @@ a{color:inherit;text-decoration:none}
 .fc-bath   {left:38%; top:71.5%; width:46%; height:22%;   z-index:4}
 /* family stat numbers are grey (not red, as on the blue page) */
 .stats--grey .stat-num{color:#767474}
+
+/* ---------- Garden stats collage (absolute, matches design) ---------- */
+.gcollage{padding-bottom:89%}
+.gc-lead{left:10%; top:8%; width:40%; z-index:10;
+  color:var(--burgundy); font-family:var(--sans); font-weight:400;
+  font-size:clamp(.84rem,1.1vw,1rem); line-height:1.55; letter-spacing:.01em}
+.gc-aerial{left:52%; top:7%;  width:35%; height:39%; z-index:1}
+.gc-garden{left:25%; top:31%}
+.gc-pool  {left:5%;  top:42%; width:42%; height:40%; z-index:2}
+.gc-lap   {left:51%; top:51%}
+.gc-res   {left:31%; top:84%}
+/* garden stat numbers are burgundy */
+.stats--garden .stat-num{color:var(--burgundy)}
 
 /* ---------- Parallax floating images ---------- */
 .parallax{will-change:transform}
